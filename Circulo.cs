@@ -16,7 +16,16 @@ public class Circulo : Punto
 
     public override bool Mover(int x, int y)
     {
-        return (y + radio < 600 && x + radio < 800);
+        if(y + radio < 600 && x + radio < 800)
+        {
+            this.x = x;
+            this.y = y;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override void Dibujar()

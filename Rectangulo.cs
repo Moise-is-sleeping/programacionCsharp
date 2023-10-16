@@ -17,7 +17,16 @@ public class Rectangulo:Punto
 
     public override bool Mover(int x, int y)
     {
-        return (x + ancho < 800 && y + alto < 600);
+        if(x + ancho < 800 && y + alto < 600)
+        {
+            this.x = x;
+            this.y = y;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     public override void Dibujar()
     {
