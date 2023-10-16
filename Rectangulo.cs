@@ -17,19 +17,12 @@ public class Rectangulo:Punto
 
     public override bool Mover(int x, int y)
     {
-        if(x + ancho < 800 && y + alto < 600)
-        {
-            this.x = x;
-            this.y = y;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+
+        return (x + ancho < 800 && x + ancho > 0 && y + alto < 600 && y + alto > 0);
+
     }
-    public override void Dibujar()
+    public override string Dibujar()
     {
-        Console.WriteLine($"Rectangulo x = {x} y = {y} ancho = {ancho} alto = {alto}");
+        return $"Rectangulo x = {x} y = {y} ancho = {ancho} alto = {alto}";
     }
 }

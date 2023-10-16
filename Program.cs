@@ -1,31 +1,15 @@
 ﻿using ConsoleApp1;
 
+
 GraficoCompuesto Compuesto = new GraficoCompuesto();
+Compuesto.Insert(new Punto(245, 367));
+Compuesto.Insert(new Circulo(245, 367,12));
+Compuesto.Insert(new Punto(900, 367));
 
-for (int i = 0; i < 3; i++) 
+
+
+
+if (Compuesto.Mover(23, 56))
 {
-    Console.WriteLine("1) Punto 2) Circulo 3)Rectangulo ");
-    int type = Convert.ToInt32(Console.ReadLine());
-    Compuesto.Agregar(type);
+    Console.WriteLine(Compuesto.Dibujar());
 }
-
-Compuesto.Dibujar();
-
-Console.WriteLine("Mover:");
-Console.WriteLine("x?");
-int x = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("y?");
-int y = Convert.ToInt32(Console.ReadLine());
-
-
-
-if (Compuesto.Mover(x, y))
-{
-    Compuesto.Dibujar();
-}
-else
-{
-    Console.WriteLine("Se sale de la pantalla");
-}
-
-;

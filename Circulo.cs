@@ -2,34 +2,26 @@ namespace ConsoleApp1;
 
 public class Circulo : Punto
 {
-    private int radio;
-    private int x;
-    private int y;
+    private int Radio;
+    private int X;
+    private int Y;
 
 
     public Circulo(int x, int y, int radio) : base(x,y )
     {
-        this.radio = radio;
-        this.x = x;
-        this.y = y;
+        Radio = radio;
+        X = x;
+        Y = y;
     }
 
     public override bool Mover(int x, int y)
     {
-        if(y + radio < 600 && x + radio < 800)
-        {
-            this.x = x;
-            this.y = y;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (y + Radio < 600 && y + Radio > 0 && x + Radio < 800 && x + Radio > 0);
+        
     }
 
-    public override void Dibujar()
+    public override string Dibujar()
     {
-        Console.WriteLine($"Circulo x = {x} y = {y} radio = {radio}");
+        return $"Circulo x = {X} y = {Y} radio = {Radio}";
     }
 }

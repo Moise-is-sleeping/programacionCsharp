@@ -3,47 +3,13 @@ namespace ConsoleApp1;
 public class GraficoCompuesto:IGrafico
 {
     private List<Punto> ListaGraficos = new List<Punto>();
-    
 
-    public void Agregar(int number)
+
+
+
+    public void Insert(Punto shape)
     {
-        switch (number)
-        {
-            case 1:
-            {
-                Console.WriteLine("x?");
-                int x = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("y?");
-                int y = Convert.ToInt32(Console.ReadLine());
-                ListaGraficos.Add(new Punto(x,y));
-                break;
-            }
-            case 2:
-            {
-                Console.WriteLine("x?");
-                int x = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("y?");
-                int y = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Radio?");
-                int radio = Convert.ToInt32(Console.ReadLine());
-                ListaGraficos.Add(new Circulo(x,y,radio));
-                break;
-            }
-            case 3:
-            {
-                Console.WriteLine("x?");
-                int x = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("y?");
-                int y = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ancho?");
-                int ancho = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Alto?");
-                int alto = Convert.ToInt32(Console.ReadLine());
-                ListaGraficos.Add(new Rectangulo(x,y,alto,ancho));
-                break;
-            }
-
-        }
+        ListaGraficos.Add(shape);
     }
 
     public bool Mover(int x, int y)
@@ -59,11 +25,14 @@ public class GraficoCompuesto:IGrafico
         return check;
     }
 
-    public void Dibujar()
+    public string Dibujar()
     {
+        string text = null;
         foreach (var item in ListaGraficos)
         {
-            item.Dibujar();
+            text += item.Dibujar() +"\n";
         }
+
+        return text;
     }
 }

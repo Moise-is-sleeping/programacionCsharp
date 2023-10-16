@@ -13,20 +13,11 @@ public class Punto : IGrafico
 
     public virtual bool Mover(int x, int y)
     {
-        if (this.y + y < 600 || this.x + x < 800)
-        {
-            this.x = x;
-            this.y = y;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (this.y + y < 600 && this.y + y > 0 && this.x + x < 800 && this.x + x > 0);
     }
 
-    public virtual void Dibujar()
+    public virtual string Dibujar()
     {
-        Console.WriteLine($"Punto x = {x} y = {y}");
+        return $"Punto x = {x} y = {y}";
     }
 }
