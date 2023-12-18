@@ -2,7 +2,7 @@ namespace ConsoleApp1;
 
 public class GraficoCompuesto:IGrafico
 {
-    private List<Punto> ListaGraficos = new List<Punto>();
+    private List<IGrafico> ListaGraficos = new List<IGrafico>();
 
 
 

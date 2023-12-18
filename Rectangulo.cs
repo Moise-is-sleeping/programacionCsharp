@@ -4,15 +4,17 @@ public class Rectangulo:Punto
 {
     private int ancho;
     private int alto;
-    private int x;
-    private int y;
-
+    
     public Rectangulo(int x,int y, int alto, int ancho) : base(x,y )
     {
-        this.y = y;
-        this.x = x;
-        this.alto = alto;
-        this.ancho = ancho;
+        if (alto + x is > 800 or < 0 || alto + y is > 600 or < 0 || ancho + x is > 800 or < 0 || ancho + y is > 600 or < 0)
+        {
+            throw new Exception("Error con los parametros");
+        }
+        {
+            this.alto = alto;
+            this.ancho = ancho;
+        }
     }
 
     public override bool Mover(int x, int y)

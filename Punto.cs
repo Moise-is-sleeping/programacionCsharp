@@ -2,13 +2,19 @@ namespace ConsoleApp1;
 
 public class Punto : IGrafico
 {
-    private int x;
-    private int y;
-
+    public int x;
+    public int y;
+    
     public Punto(int x,int y )
     {
-        this.y = y;
-        this.x = x;
+        if (x is > 800 or < 0 || y is > 600 or < 0)
+        {
+            throw new Exception("Error con los parametros");
+        }
+        {
+            this.y = y;
+            this.x = x;
+        }
     }
 
     public virtual bool Mover(int x, int y)
